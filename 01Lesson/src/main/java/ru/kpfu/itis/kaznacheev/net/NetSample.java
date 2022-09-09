@@ -26,7 +26,7 @@ public class NetSample {
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json");
-            connection.setRequestProperty("Authorization", "Bearer" + token);
+            connection.setRequestProperty("Authorization", "Bearer " + token);
 
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
@@ -102,7 +102,7 @@ public class NetSample {
 
 
         try {
-            URL patchUrl = new URL("https://gorest.co.in/public/v2/users/3310");
+            URL patchUrl = new URL("https://gorest.co.in/public/v2/users/14");
             HttpURLConnection patchConnection = (HttpURLConnection) patchUrl.openConnection();
             String token = "09de836b512febc411a6e208ebf21fad0f382449fc5964993506556de29375b5";
 
@@ -110,12 +110,12 @@ public class NetSample {
 
             patchConnection.setRequestProperty("Content-Type", "application/json");
             patchConnection.setRequestProperty("Accept", "application/json");
-            patchConnection.setRequestProperty("Authorization", "Bearer" + token);
+            patchConnection.setRequestProperty("Authorization", "Bearer " + token);
 
             patchConnection.setDoOutput(true);
             patchConnection.connect();
 
-            String jsonInputString = "'{\"name\":\"Herbert Steuber\",\"email\":\"herbert_steuber@corkery.net\",\"status\":\"active\"}'";
+            String jsonInputString = "{\"name\":\"Herbert Steuber\",\"email\":\"herbert_steuber@corkery.net\",\"status\":\"active\"}";
             try (OutputStream outputStream = patchConnection.getOutputStream()) {
                 byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
                 outputStream.write(input, 0, input.length);
