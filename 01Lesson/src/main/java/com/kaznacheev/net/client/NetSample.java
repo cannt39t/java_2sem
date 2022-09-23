@@ -24,6 +24,7 @@ public class NetSample {
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
 
+//            System.out.println(connection.getResponseCode());
 
             try (BufferedReader reader =
                          new BufferedReader(
@@ -34,6 +35,7 @@ public class NetSample {
                 while ((input = reader.readLine()) != null) {
                     content.append(input);
                 }
+//                System.out.println(content.toString());
             }
 
             connection.disconnect();
@@ -59,7 +61,7 @@ public class NetSample {
 
             postConnection.setDoOutput(true);
 
-
+            // email should be unique, in otherwise 422 status code will bee returned
             String jsonInputString = "{\"name\":\"Tenali Ramakrishna\", \"gender\":\"male\", \"email\":\"tenali.ramakrishna2@gmail.com\", \"status\":\"active\"}";
 
             try (OutputStream outputStream = postConnection.getOutputStream()) {

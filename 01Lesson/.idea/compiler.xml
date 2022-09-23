@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="itis-108-sem1" />
+        <module name="sds" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="itis-108-sem1" target="17" />
+      <module name="sds" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
